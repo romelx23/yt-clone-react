@@ -1,0 +1,13 @@
+.search-input {
+  @apply w-full h-10 rounded-lg border-2 border-gray-200 focus:outline-none focus:border-gray-400 px-5;
+}
+#root {
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: #333;
+  color: #fff;
+}
+.app {
+}
