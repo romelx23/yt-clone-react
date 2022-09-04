@@ -1,5 +1,5 @@
 import { Stack } from '@mui/system'
-import React from 'react'
+import React, { useState } from 'react'
 import { categories } from '../../utils/constants'
 import { Category } from './Category';
 
@@ -20,13 +20,14 @@ export const Sidebar = () => {
                     md: 1
                 },
                 gap: {
+                    xs: .8,
                     md: 1
                 }
             }}
         >
             {
                 categories.map((category) => {
-                    return <Category category={category} />
+                    return <Category category={category} key={category.name} />
                 })
             }
         </Stack>

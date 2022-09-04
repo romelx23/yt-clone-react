@@ -13,6 +13,7 @@ import {
   TheaterComedy,
   FitnessCenter,
   DeveloperMode,
+  Tv,
 } from "@mui/icons-material";
 
 export const logo =
@@ -70,6 +71,10 @@ export const categories = [
   {
     name: "Tecnología",
     icon: DeveloperMode,
+  },
+  {
+    name: "Anime",
+    icon: Tv,
   },
 ];
 
