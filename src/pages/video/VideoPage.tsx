@@ -42,8 +42,14 @@ export const VideoPage = () => {
                             top: 80,
                         }}
                     >
-                        <Box sx={{ width: '100%', position: 'sticky', top: '86px', display: 'flex', flexDirection: 'column' }}>
-                            <ReactPlayer style={{ width: '100%' }} url={`https://www.youtube.com/watch?v=${name}`} controls={true} />
+                        <Box sx={{
+                            width: '100%', position: {
+                                sx: 'relative',
+                                md: 'sticky',
+                            }, top: '86px', display: 'flex', flexDirection: 'column',
+                            backgroundColor: '#333',
+                        }}>
+                            <ReactPlayer style={{ width: '100px', height: '80vh' }} url={`https://www.youtube.com/watch?v=${name}`} controls={true} />
                             <Typography
                                 color="#fff"
                                 variant="h5"
@@ -60,7 +66,7 @@ export const VideoPage = () => {
                                 py={1}
                                 px={2}
                             >
-                                <Link to={data && `/channel/${data?.channelId}`}>
+                                <Link to={data && `/canal/${data?.channelId}`}>
                                     <Typography
                                         variant="subtitle1"
                                         color="#fff"

@@ -8,6 +8,7 @@ export const Sidebar = () => {
         <Stack
             direction="row"
             sx={{
+                backgroundColor: "#333",
                 overflowY: 'auto',
                 height: {
                     sx: 'auto',
