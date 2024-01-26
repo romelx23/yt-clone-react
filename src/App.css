@@ -26,3 +26,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+iframe {
+  min-height: 400px;
+}

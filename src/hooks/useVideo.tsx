@@ -6,7 +6,7 @@ export const useVideo = () => {
     const { setVideos, selected, setVideoDetails } = useContext(VideoContext);
     const loadVideos = async () => {
         try {
-            const { items } = await fetchOptions(`search?part=snippet&q=${selected}`);
+            const { items } = await fetchOptions(`search?part=snippet&q=${ selected }`);
             setVideos(items);
         } catch (error) {
             setVideos([]);
@@ -16,7 +16,7 @@ export const useVideo = () => {
     const loadVideosByChannel = async (channelId: string) => {
         try {
             // const { items } = await fetchOptions(`channels?part=snippet&id=${channelId}`);
-            const { items } = await fetchOptions(`search?channelId=${channelId}&part=snippet&order=date&maxResults=20`);
+            const { items } = await fetchOptions(`search?channelId=${ channelId }&part=snippet&order=date&maxResults=20`);
             setVideos(items);
         } catch (error) {
             console.log(error)
@@ -24,7 +24,7 @@ export const useVideo = () => {
     }
     const loadVideosDetails = async (videoId: string) => {
         try {
-            const { items } = await fetchOptions(`videos?part=snippet,statics&id=${videoId}`);
+            const { items } = await fetchOptions(`videos?part=snippet,statics&id=${ videoId }`);
             setVideoDetails(items);
         } catch (error) {
             setVideoDetails([]);
@@ -33,7 +33,7 @@ export const useVideo = () => {
     }
     const loadVideosRelated = async (videoId: string) => {
         try {
-            const { items } = await fetchOptions(`search?part=snippet&relatedToVideoId=${videoId}&type=video&maxResults=20`);
+            const { items } = await fetchOptions(`search?part=snippet&relatedToVideoId=${ videoId }&type=video&maxResults=20`);
             setVideos(items);
         } catch (error) {
             setVideos([]);

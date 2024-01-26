@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from 'react'
 import { GridVideos, Sidebar, VideoLayout } from '../../components'
 import { VideoContext } from '../../context';
 import { useVideo } from '../../hooks';
+import { GridPlaceHolder } from '../../components/video/GridPlaceHolder';
 
 export const HomePage = () => {
     const { loadVideos } = useVideo();
@@ -46,10 +47,19 @@ export const HomePage = () => {
                         sx={{
                             color: '#fff'
                         }}
+                        fontSize={{
+                            xs: '1rem',
+                            md: '1.5rem'
+                        }}
                     >
                         Videos {selected}
                     </Typography>
-                    <GridVideos videos={videos} channel={true} />
+                    {
+                        videos.length > 0 ?
+                            <GridVideos videos={videos} channel={true} />
+                            :
+                            <GridPlaceHolder />
+                    }
                     <Typography
                         variant="body2"
                         textAlign="center"

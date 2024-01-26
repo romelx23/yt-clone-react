@@ -6,7 +6,7 @@
   @apply w-full h-10 rounded-lg border-2 border-gray-200 focus:outline-none focus:border-gray-400 px-5;
 }
 .video-card {
-  @apply rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300;
+  @apply rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 transition-transform hover:scale-105;
 }
 .video-title {
   @apply overflow-hidden overflow-ellipsis whitespace-nowrap w-56 font-semibold text-xl;

@@ -18,6 +18,7 @@ export const GridVideos: FC<Props> = ({ videos, channel, direction }) => {
             flexWrap="wrap"
             justifyContent="center"
             gap={2}
+            className='md:p-2.5 p-10'
         >
             {
                 channel &&

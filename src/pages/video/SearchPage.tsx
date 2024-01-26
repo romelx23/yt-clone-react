@@ -46,11 +46,18 @@ export const SearchPage = () => {
                         sx={{
                             color: '#fff'
                         }}
+                        fontSize={{
+                            xs: '1rem',
+                            md: '1.5rem'
+                        }}
+                        style={{
+                            marginBottom: '10px'
+                        }}
                     >
                         Resultados de la busqueda de :
                         <span
                             style={{
-                                color: '#f31503',
+                                color: '#fafafa',
                                 marginLeft: '5px'
                             }}
                         >

@@ -2,11 +2,12 @@ import React, { useContext, useState } from 'react'
 import { Paper, IconButton } from '@mui/material';
 import { Search, AddCircle, Person } from '@mui/icons-material';
 import { VideoContext } from '../../context';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 export const SearchBar = () => {
     const { setSelected } = useContext(VideoContext);
     const [value, setValue] = useState('');
+    let [searchParams, setSearchParams] = useSearchParams();
     const navigate = useNavigate();
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -14,6 +15,7 @@ export const SearchBar = () => {
         setSelected(value);
         setValue('');
         navigate('/buscar/' + value);
+        setSearchParams({ q: value });
     }
     return (
         <Paper

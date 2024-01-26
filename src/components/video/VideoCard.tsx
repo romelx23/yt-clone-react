@@ -14,12 +14,12 @@ export const VideoCard: FC<Props> = ({ video }) => {
         <Card
             sx={{
                 width: {
-                    xs: '320px'
+                    xs: '300px'
                 }
             }}
         >
             <Link
-                to={video.id ? `/video/${video.id.videoId}` : `/channel/${video.snippet?.channelId}`}
+                to={video.id ? `/video/${ video.id.videoId }` : `/channel/${ video.snippet?.channelId }`}
             >
                 <CardMedia
                     image={video.snippet?.thumbnails.high.url}
@@ -34,10 +34,10 @@ export const VideoCard: FC<Props> = ({ video }) => {
                     height: 100,
                 }}
             >
-                <Link to={video.id ? `/video/${video.id.videoId}` : `/channel/${video.snippet?.channelId}`}>
+                <Link to={video.id ? `/video/${ video.id.videoId }` : `/channel/${ video.snippet?.channelId }`}>
                     <Typography className='video-title' variant="subtitle1" fontWeight="bold" color="#fff" >{video.snippet?.title.slice(0, 60) || demoVideoTitle.slice(0, 60)}</Typography>
                 </Link>
-                <Link to={video.snippet?.channelId ? `/canal/${video.snippet?.channelId}` : `/canal/${demoChannelUrl}`}>
+                <Link to={video.snippet?.channelId ? `/canal/${ video.snippet?.channelId }` : `/canal/${ demoChannelUrl }`}>
                     <Typography className='video-title' variant="subtitle2" fontWeight="bold" color="#fff" >{video.snippet?.channelTitle.slice(0, 60) || demoChannelTitle.slice(0, 60)}
                         <CheckCircle sx={{ fontSize: 12, color: 'gray' }} />
                     </Typography>

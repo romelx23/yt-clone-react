@@ -48,14 +48,41 @@ export const VideoPage = () => {
                                 md: 'sticky',
                             }, top: '86px', display: 'flex', flexDirection: 'column',
                             backgroundColor: '#333',
+                            padding: '10px',
                         }}>
-                            <ReactPlayer style={{ width: '100px', height: '80vh' }} url={`https://www.youtube.com/watch?v=${name}`} controls={true} />
-                            <Typography
-                                color="#fff"
-                                variant="h5"
-                                fontWeight="bold"
+                            <div className="flex h-full min-h-[400px] lg:min-h-[600px] max-w-[1000px] mb-3">
+                                <ReactPlayer
+                                    width="100%"
+                                    height="100%"
+                                    config={{
+                                        youtube: {
+                                            playerVars: {
+                                                showinfo: 1,
+                                            }
+                                        }
+                                    }}
+
+                                    style={{ width: '100%', height: '100%', minHeight: "400px" }} url={`https://www.youtube.com/watch?v=${ name }`} controls={true} />
+                            </div>
+                            <h1
+                                // color="#fff"
+                                // variant="h5"
+                                // fontWeight="bold"
+                                className='text-white md:text-xl text-base font-bold'
                             >
                                 {data?.title}
+                            </h1>
+                            <Typography
+                                color="#fff"
+                                variant="subtitle1"
+                                fontWeight="bold"
+                            >
+                                {
+                                    data.description.length > 100 ?
+                                        data?.description.slice(0, 100) + '...'
+                                        :
+                                        data?.description
+                                }
                             </Typography>
                             <Stack
                                 direction="row"
@@ -66,7 +93,7 @@ export const VideoPage = () => {
                                 py={1}
                                 px={2}
                             >
-                                <Link to={data && `/canal/${data?.channelId}`}>
+                                <Link to={data && `/canal/${ data?.channelId }`}>
                                     <Typography
                                         variant="subtitle1"
                                         color="#fff"
